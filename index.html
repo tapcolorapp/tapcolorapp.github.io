@@ -3,60 +3,294 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TapColor — About us</title>
-<meta name="description" content="TapColor is a free coloring-pages website. Thousands of printable and color-online pages for kids, parents, teachers, and anyone who likes to color.">
+<title>TapColor — Free Coloring Pages to Color Online & Print</title>
+<meta name="description" content="Explore 23,097 free printable coloring pages across 25 categories. Color online in your browser, create a shareable time-lapse video, or print crisp outlines. No sign-up, 100% free.">
+<meta name="theme-color" content="#8a3ffc">
+<link rel="canonical" href="https://tapcolorapp.github.io/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TapColor">
+<meta property="og:title" content="TapColor — Free Coloring Pages to Color Online & Print">
+<meta property="og:description" content="23,097 free coloring pages across 25 categories. Color online, make a time-lapse video, or print — no sign-up, 100% free.">
+<meta property="og:url" content="https://tapcolorapp.github.io/">
+<meta property="og:image" content="https://tapcolor.app/og.png">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@tapcolorapp">
+<meta name="twitter:title" content="TapColor — Free Coloring Pages to Color Online & Print">
+<meta name="twitter:description" content="23,097 free coloring pages across 25 categories. Color online, make a time-lapse video, or print — no sign-up, 100% free.">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%A8%3C/text%3E%3C/svg%3E">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "TapColor",
+  "url": "https://tapcolor.app",
+  "email": "contact@tapcolor.app",
+  "description": "The internet's friendliest coloring page library — 23,097 free coloring pages across 25 categories to color online or print.",
+  "sameAs": [
+    "https://www.instagram.com/tapcolor_app/",
+    "https://x.com/tapcolorapp",
+    "https://www.threads.com/@tapcolor_app",
+    "https://www.pinterest.com/tapcolor/",
+    "https://www.tumblr.com/tapcolor",
+    "https://www.deviantart.com/tapcolor",
+    "https://www.producthunt.com/@tap_color",
+    "https://www.trustpilot.com/review/tapcolor.app",
+    "https://www.crunchbase.com/organization/tap-color",
+    "https://gravatar.com/tapcolor"
+  ]
+}
+</script>
+
 <style>
-  :root{ --ink:#1b1b1f; --mut:#5c5c66; --line:#e7e7ea; --link:#8a3ffc; --bg:#ffffff; }
+  :root{
+    --ink:#17171c; --mut:#5c5c66; --line:#ececf0; --bg:#ffffff; --soft:#faf8ff;
+    --brand:#8a3ffc; --brand-2:#d633ff; --brand-ink:#6a1fd0;
+  }
   *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
   body{
     margin:0; background:var(--bg); color:var(--ink);
     font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    -webkit-font-smoothing:antialiased;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
   }
-  .wrap{max-width:680px; margin:0 auto; padding:72px 22px 96px}
-  header{margin-bottom:40px}
-  .logo{font-size:15px; font-weight:700; letter-spacing:.02em; color:var(--mut); text-transform:uppercase}
-  h1{font-size:34px; line-height:1.2; letter-spacing:-.02em; margin:18px 0 10px}
-  .lede{font-size:19px; color:var(--mut); margin:0}
-  h2{font-size:15px; text-transform:uppercase; letter-spacing:.04em; color:var(--mut); margin:44px 0 10px}
+  a{color:var(--brand-ink); text-decoration:none}
+  a:hover{text-decoration:underline; text-underline-offset:3px}
+
+  /* Hero */
+  .hero{
+    position:relative; overflow:hidden;
+    background:
+      radial-gradient(1100px 520px at 82% -8%, rgba(214,51,255,.14), transparent 60%),
+      radial-gradient(900px 460px at 8% 0%, rgba(138,63,252,.14), transparent 55%),
+      var(--bg);
+    border-bottom:1px solid var(--line);
+  }
+  .hero::after{
+    content:""; position:absolute; left:0; right:0; bottom:-1px; height:4px;
+    background:linear-gradient(90deg,var(--brand),var(--brand-2),#ff6ad5,var(--brand));
+  }
+  .wrap{max-width:720px; margin:0 auto; padding:0 22px}
+  .hero .wrap{padding-top:84px; padding-bottom:72px}
+  .brand{display:inline-flex; align-items:center; gap:10px; margin-bottom:30px}
+  .brand .dot{
+    width:30px; height:30px; border-radius:9px; display:grid; place-items:center; font-size:17px;
+    background:linear-gradient(135deg,var(--brand),var(--brand-2)); box-shadow:0 6px 18px rgba(138,63,252,.35);
+  }
+  .brand .name{font-size:15px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--brand-ink)}
+  h1{
+    font-size:clamp(34px,6vw,52px); line-height:1.08; letter-spacing:-.025em; margin:0 0 16px; font-weight:800;
+  }
+  h1 .grad{
+    background:linear-gradient(120deg,var(--brand),var(--brand-2)); -webkit-background-clip:text;
+    background-clip:text; color:transparent;
+  }
+  .lede{font-size:clamp(18px,2.4vw,21px); color:var(--mut); margin:0 0 30px; max-width:30em}
+  .actions{display:flex; flex-wrap:wrap; gap:12px}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; border-radius:12px; padding:13px 22px;
+    font-weight:700; font-size:16px; transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  }
+  .btn:hover{text-decoration:none; transform:translateY(-2px)}
+  .btn-primary{
+    color:#fff; background:linear-gradient(120deg,var(--brand),var(--brand-2));
+    box-shadow:0 10px 24px rgba(138,63,252,.35);
+  }
+  .btn-primary:hover{box-shadow:0 14px 30px rgba(138,63,252,.45)}
+  .btn-ghost{color:var(--ink); border:1px solid var(--line); background:#fff}
+  .btn-ghost:hover{border-color:var(--brand)}
+
+  .stats{display:flex; flex-wrap:wrap; gap:14px 36px; margin-top:38px}
+  .stat{display:flex; flex-direction:column; gap:2px}
+  .stat .num{font-size:clamp(24px,3.4vw,30px); font-weight:800; letter-spacing:-.02em; color:var(--brand-ink); line-height:1}
+  .stat .lbl{font-size:13px; color:var(--mut); font-weight:600}
+
+  /* Content sections */
+  section{padding:56px 0}
+  section + section{border-top:1px solid var(--line)}
+  .eyebrow{font-size:13px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--brand-ink); margin:0 0 12px}
+  h2{font-size:clamp(23px,3.2vw,28px); line-height:1.25; letter-spacing:-.015em; margin:0 0 14px; font-weight:800}
   p{margin:0 0 16px}
-  ul{margin:0 0 16px; padding-left:20px}
-  li{margin:6px 0}
-  a{color:var(--link); text-decoration:none}
-  a:hover{text-decoration:underline; text-underline-offset:2px}
-  .cta{display:inline-block; margin-top:8px; border:1px solid var(--line); border-radius:10px; padding:11px 18px; color:var(--ink); font-weight:600}
-  .cta:hover{border-color:var(--ink); text-decoration:none}
-  footer{margin-top:56px; padding-top:22px; border-top:1px solid var(--line); color:var(--mut); font-size:14px}
+
+  .cards{display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:8px}
+  .card{
+    border:1px solid var(--line); border-radius:16px; padding:22px; background:var(--soft);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .card:hover{transform:translateY(-3px); box-shadow:0 12px 28px rgba(23,23,28,.07)}
+  .card .ic{font-size:24px; margin-bottom:10px}
+  .card h3{margin:0 0 6px; font-size:17px; font-weight:800}
+  .card p{margin:0; font-size:15px; color:var(--mut); line-height:1.55}
+
+  .tags{display:flex; flex-wrap:wrap; gap:9px; margin-top:8px}
+  .tags span{
+    display:inline-block; padding:8px 14px; border-radius:999px; font-size:14px; font-weight:600;
+    color:var(--brand-ink); background:var(--soft); border:1px solid var(--line);
+    transition:transform .14s ease, border-color .14s ease;
+  }
+  .tags span:hover{transform:translateY(-2px); border-color:var(--brand)}
+
+  /* Social */
+  .social{background:var(--soft)}
+  .social-grid{
+    display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:12px; margin-top:8px;
+  }
+  .chip{
+    display:flex; align-items:center; gap:10px; padding:13px 15px; border-radius:12px;
+    border:1px solid var(--line); background:#fff; color:var(--ink); font-weight:600; font-size:15px;
+    transition:transform .14s ease, border-color .14s ease, box-shadow .14s ease;
+  }
+  .chip:hover{text-decoration:none; transform:translateY(-2px); border-color:var(--brand); box-shadow:0 8px 20px rgba(138,63,252,.14)}
+  .chip .ic{width:22px; height:22px; flex:0 0 22px; display:grid; place-items:center; font-size:16px}
+  .chip .ic svg{width:20px; height:20px; fill:var(--brand-ink)}
+
+  footer{border-top:1px solid var(--line); background:#fff}
+  footer .wrap{padding:30px 22px 48px; color:var(--mut); font-size:14px}
+  footer .row{display:flex; flex-wrap:wrap; gap:8px 18px; align-items:center; justify-content:space-between}
+  footer a{color:var(--mut)}
+  footer a:hover{color:var(--brand-ink)}
+
+  @media (max-width:560px){
+    .cards{grid-template-columns:1fr}
+    .hero .wrap{padding-top:60px; padding-bottom:52px}
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <div class="logo">TapColor</div>
-    <h1>Free coloring pages, for everyone.</h1>
-    <p class="lede">We make a large, free library of coloring pages you can print or color online — no sign-up, no watermark, no catch.</p>
-  </header>
 
-  <h2>Who we are</h2>
-  <p>TapColor is a small project with one simple goal: give kids, parents, teachers, and grown-ups who color to unwind an easy place to find a page and start coloring in seconds.</p>
+<header class="hero">
+  <div class="wrap">
+    <div class="brand">
+      <span class="dot">🎨</span>
+      <span class="name">TapColor</span>
+    </div>
+    <h1>Free coloring pages to <span class="grad">color online &amp; print</span>.</h1>
+    <p class="lede">Explore <strong>23,097</strong> printable coloring pages across <strong>25</strong> categories. Grab your virtual crayons, color right in your browser — then watch your art come alive as a time-lapse video you can share, or print a crisp outline to color at home.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="https://tapcolor.app">Start coloring →</a>
+      <a class="btn btn-ghost" href="#connect">Follow us</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><span class="num">23,097</span><span class="lbl">coloring pages</span></div>
+      <div class="stat"><span class="num">25</span><span class="lbl">categories</span></div>
+      <div class="stat"><span class="num">100%</span><span class="lbl">free, forever</span></div>
+      <div class="stat"><span class="num">0</span><span class="lbl">sign-up needed</span></div>
+    </div>
+  </div>
+</header>
 
-  <h2>What we offer</h2>
-  <ul>
-    <li><strong>Thousands of pages</strong> — animals, dinosaurs, holidays, mandalas, and much more.</li>
-    <li><strong>Print or color online</strong> — fill pages right in your browser on a phone, tablet, or laptop. No printer required.</li>
-    <li><strong>100% free</strong> — everything is free to use, with no account and no watermark.</li>
-    <li><strong>Made for the classroom too</strong> — teachers can print for the whole class in a couple of clicks.</li>
-  </ul>
+<main>
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Who we are</p>
+      <h2>The internet's friendliest coloring page library.</h2>
+      <p>TapColor gives kids, families, adults who color to unwind, and teachers an easy place to pick a page and start coloring in seconds — right in the browser, on phone or desktop. No sign-up, no barriers, just creative freedom.</p>
+    </div>
+  </section>
 
-  <h2>Why we built it</h2>
-  <p>Most coloring sites bury the good pages behind pop-ups, paywalls, and watermarks. We wanted the opposite: open the page, pick a page, color. That's the whole idea — and it stays free.</p>
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">What we offer</p>
+      <h2>Color, replay, share, print.</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="ic">🖍️</div>
+          <h3>Color online</h3>
+          <p>Tap to fill, pick from the crayon palette, undo anytime. Works on phone &amp; desktop.</p>
+        </div>
+        <div class="card">
+          <div class="ic">🎬</div>
+          <h3>Time-lapse videos</h3>
+          <p>Watch your whole session replay as a satisfying time-lapse — ready to share on TikTok or Reels.</p>
+        </div>
+        <div class="card">
+          <div class="ic">🖨️</div>
+          <h3>Print-ready pages</h3>
+          <p>High-resolution outlines sized for standard paper — print and color at home.</p>
+        </div>
+        <div class="card">
+          <div class="ic">🏫</div>
+          <h3>Classroom mode</h3>
+          <p>Teachers create a class with one link — students color and submit to the class wall, no accounts needed.</p>
+        </div>
+        <div class="card">
+          <div class="ic">⚔️</div>
+          <h3>Challenge mode</h3>
+          <p>Send a challenge link and see both artworks side by side.</p>
+        </div>
+        <div class="card">
+          <div class="ic">🎯</div>
+          <h3>Difficulty levels</h3>
+          <p>Easy, Medium, and Hard badges based on actual area counts — pick your pace.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <p><a class="cta" href="https://tapcolor.app">Start coloring at tapcolor.app →</a></p>
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Browse</p>
+      <h2>25 categories for every mood.</h2>
+      <p>From toddlers to adults — there's always something to color.</p>
+      <div class="tags">
+        <span>Animals</span><span>Disney</span><span>Video Games</span><span>For Girls</span>
+        <span>Kids TV Shows</span><span>Halloween</span><span>For Boys</span><span>For Adults</span>
+        <span>Christmas</span><span>Superheroes</span><span>Kids Movies</span><span>Fall</span>
+        <span>Dinosaurs</span><span>Kawaii</span><span>Unicorns</span><span>Food</span>
+        <span>Back To School</span><span>Holidays</span><span>Easter</span><span>For Toddlers</span>
+        <span>Religious</span><span>Princesses</span><span>Summer</span><span>&amp; more</span>
+      </div>
+    </div>
+  </section>
 
-  <footer>
-    TapColor · <a href="https://tapcolor.app">tapcolor.app</a><br>
-    Free printable &amp; online coloring pages.
-  </footer>
-</div>
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Why we built it</p>
+      <h2>Open the page, pick a page, color.</h2>
+      <p>Most coloring sites bury the good pages behind pop-ups, paywalls, and watermarks. We wanted the opposite: safe, accessible, and full of creative freedom — no barriers. That's the whole idea, and it stays 100% free, forever.</p>
+      <p><a class="btn btn-primary" href="https://tapcolor.app">Start coloring at tapcolor.app →</a></p>
+    </div>
+  </section>
+
+  <section class="social" id="connect">
+    <div class="wrap">
+      <p class="eyebrow">Connect</p>
+      <h2>Follow TapColor</h2>
+      <p>Come for coloring inspiration, new pages, and updates.</p>
+      <div class="social-grid">
+        <a class="chip" href="https://www.instagram.com/tapcolor_app/" target="_blank" rel="noopener me"><span class="ic">📷</span> Instagram</a>
+        <a class="chip" href="https://x.com/tapcolorapp" target="_blank" rel="noopener me"><span class="ic">𝕏</span> X / Twitter</a>
+        <a class="chip" href="https://www.threads.com/@tapcolor_app" target="_blank" rel="noopener me"><span class="ic">@</span> Threads</a>
+        <a class="chip" href="https://www.pinterest.com/tapcolor/" target="_blank" rel="noopener me"><span class="ic">📌</span> Pinterest</a>
+        <a class="chip" href="https://www.tumblr.com/tapcolor" target="_blank" rel="noopener me"><span class="ic">🅣</span> Tumblr</a>
+        <a class="chip" href="https://www.deviantart.com/tapcolor" target="_blank" rel="noopener me"><span class="ic">🎭</span> DeviantArt</a>
+        <a class="chip" href="https://www.producthunt.com/@tap_color" target="_blank" rel="noopener me"><span class="ic">🐱</span> Product Hunt</a>
+        <a class="chip" href="https://www.trustpilot.com/review/tapcolor.app" target="_blank" rel="noopener me"><span class="ic">⭐</span> Trustpilot</a>
+        <a class="chip" href="https://www.crunchbase.com/organization/tap-color" target="_blank" rel="noopener me"><span class="ic">📊</span> Crunchbase</a>
+        <a class="chip" href="https://gravatar.com/tapcolor" target="_blank" rel="noopener me"><span class="ic">🧑</span> Gravatar</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="row">
+      <div>
+        <strong>TapColor</strong> · <a href="https://tapcolor.app">tapcolor.app</a><br>
+        Free printable &amp; online coloring pages.
+      </div>
+      <div>
+        <a href="mailto:contact@tapcolor.app">contact@tapcolor.app</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
